@@ -1,0 +1,48 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+21-04-2025
+
+Built db_manager.py for clean and reliable DB handling — left a usage example in main.py. Also 
+created a database setup script. Now shifting focus to core logic.
+
+— Rishabh Barnwal (yes, the GOAT)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+21-04-2025
+
+Created a working prototype for the main_window.py.It saves the info that is needed in a json file
+which will be used for the database perspective.
+
+- Veda Narasimhan(the BOAT)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+24-04-2025
+
+Built core.py to handle all logic flow, debugged the backend, and dropped a clean usage example in 
+main.py.
+
+— Rishabh Barnwal (yes, the GOAT)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+24-04-2025
+
+update the main_window.py which was written in tk but changed it to pysidde6,
+made a clean version with monospace font and a dark theme, the theme is now toggleable to light and
+dark mode, reduced the cluttering, added everything to a class so that it will be usable in the main.py
+
+-Veda Narasimhan(the BOAT)
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+27-05-2025
+
+Migrated ChronoLOG to MySQL, eliminating JSON dependency and ensuring real-time SQL-powered updates. 
+Rebuilt core logic for tasks, subjects, and scheduling, with robust error handling and smooth GUI integration.
+Main window and theme toggle fully operational with optimized database operations.
+
+— Rishabh Barnwal (yes, the GOAT)
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+29-05-2025
+
+Major updates to the GUI and backend. Made the auth system live now, added logging instead of print statements,
+added actual refresh functions and finally made the notes tab error free and functioning.
+
+- Rishabh Barnwal (yse, the GOAT)
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
