@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, QTimer, QDate, QTime, QSize, QPoint, QDateTime, QPropertyAnimation, QEasingCurve
 from src.CORE.core import ChronoCore
 from src.DB.db_manager import DBManager
+from src.GUI.anime_study_timer import UltimateStudyTimer
 # from src.CORE.notification import Notification
 import random
 import pyttsx3
@@ -251,8 +252,8 @@ class MainWindow():
         def __init__(self, user_id):
             super().__init__()
             self.current_user_id = user_id
-            self.setWindowTitle("Study Hub")
-            self.setWindowIcon(QIcon("AppIcon.png"))
+            self.setWindowTitle("ChronoLOG")
+            self.setWindowIcon(QIcon("assets/AppIcon.png"))
             self.resize(1400, 900)
             
             # Define mono font
@@ -405,7 +406,7 @@ class MainWindow():
       
         def activate_study_mode(self):
             """Create and show the fullscreen study mode window"""
-            self.study_mode = MainWindow.StudyModeWindow(self)  # Your existing StudyModeWindow
+            self.study_mode = UltimateStudyTimer()# Your existing StudyModeWindow
             self.hide()  # Hide main window
             self.study_mode.showFullScreen()
             
@@ -3286,6 +3287,102 @@ class NotesTab(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
+    app.setWindowIcon(QIcon("Project - ChronoLOG/assets/AppIcon.png"))
     window = MainWindow.StudyPlanner()
     window.show()
     sys.exit(app.exec())
+"""
+def showtext(text):
+    msg = QMessageBox()
+    msg.setWindowTitle("Message")
+    msg.setText(text)
+    msg.setStandardButtons(QMessageBox.Ok)
+    msg.exec_()"""
+#remove this later
+# PySide6 color and gradient style reference for your app
+
+# --- Color Palette ---
+# Dark Mode:
+#   Text:         #eeeeee
+#   Background:   #1e1e1e
+#   Button BG:    #444444
+#   Button Text:  #ffffff
+
+# Light Mode:
+#   Text:         #000000
+#   Background:   #f8f8f8
+#   Button BG:    #f0f0f0
+#   Button Text:  #000000
+
+# --- Example QSS for PySide6 ---
+
+# Dark mode stylesheet
+DARK_MODE_QSS = """
+QWidget {
+    background-color: #1e1e1e;
+    color: #eeeeee;
+}
+QPushButton {
+    background-color: #444444;
+    color: #ffffff;
+    border: 1px solid #555;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+QPushButton:hover {
+    background-color: #555555;
+}
+"""
+
+# Light mode stylesheet
+LIGHT_MODE_QSS = """
+QWidget {
+    background-color: #f8f8f8;
+    color: #000000;
+}
+QPushButton {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+QPushButton:hover {
+    background-color: #e0e0e0;
+}
+"""
+
+# --- Gradient backgrounds in PySide6 QSS ---
+
+# Subtle overlay gradient for dark mode:
+DARK_GRADIENT_QSS = """
+QWidget#gradientBg {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(255,255,255,0.08),
+        stop:1 rgba(0,0,0,0.12)
+    );
+}
+"""
+
+# Multi-color gradient background (use on a custom QWidget with objectName "rainbowBg"):
+RAINBOW_GRADIENT_QSS = """
+QWidget#rainbowBg {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(255,0,0,0.8),
+        stop:0.5 rgba(0,255,0,0.8),
+        stop:1 rgba(0,0,255,0.8)
+    );
+}
+"""
+
+# To apply a gradient background to a widget:
+#   widget.setObjectName("gradientBg")
+#   widget.setStyleSheet(DARK_GRADIENT_QSS)
+
+# Or for rainbow:
+#   widget.setObjectName("rainbowBg")
+#   widget.setStyleSheet(RAINBOW_GRADIENT_QSS)
+
+# You can also combine these styles with the main stylesheet

@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QApplication
+from PySide6.QtGui import QIcon
 from src.DB.db_creator import create_database, create_tables
 from src.DB.db_manager import DBManager
 from src.CORE.auth_system import AuthSystem, AuthUI
@@ -9,6 +10,9 @@ def main():
     create_tables()
 
     app = QApplication(sys.argv)
+
+    icon= "assets/AppIcon.png"
+    app.setWindowIcon(QIcon(icon))
 
     auth = AuthSystem(DBManager())
     login_window = AuthUI(auth)
